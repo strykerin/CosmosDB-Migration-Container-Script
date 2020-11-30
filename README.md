@@ -20,3 +20,7 @@ while (feedIteratorAccount.HasMoreResults)
     }
 }
 ```
+
+## Dependencies
+
+`<PackageReference Include="Microsoft.Azure.Cosmos" Version="3.15.0" />`
