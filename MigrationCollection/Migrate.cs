@@ -9,7 +9,7 @@ namespace MigrateCosmosDBContainers
     {
         public static async Task Migration()
         {
-            FeedIterator<Car> feedIteratorAccount = Program._container.GetItemLinqQueryable<Car>(false)
+            FeedIterator<Car> feedIteratorAccount = Program._containerFrom.GetItemLinqQueryable<Car>(false)
                                                                       .Where(car => car.NumberOfWheels == 4)
                                                                       .ToFeedIterator();
 
@@ -18,7 +18,7 @@ namespace MigrateCosmosDBContainers
                 foreach (Car car in await feedIteratorAccount.ReadNextAsync())
                 {
                     car.UniqueKey = car.Id;
-                    await Program._container.CreateItemAsync(car);
+                    await Program._containerTo.CreateItemAsync(car);
                 }
             }
         }
