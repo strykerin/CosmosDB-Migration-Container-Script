@@ -1,6 +1,6 @@
 # CosmosDB-Migration-Container-Script
 
-This is a dotnet core console application created to migrate documents from 2 containers in the same database. 
+This is a dotnet core console application created to migrate documents from 2 containers in the same database in Azure CosmosDB. 
 
 The documents that satisfy a certain business logic will be migrated to a container that has the Unique Key Policy set on the property called `UniqueKey`.
 
